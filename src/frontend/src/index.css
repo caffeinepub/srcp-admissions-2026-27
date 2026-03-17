@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Pharmacy palette: deep forest green primary, navy secondary, gold accent */
+    --background: 97 0.005 120;
+    --foreground: 20 0.04 255;
+
+    --card: 100 0 0;
+    --card-foreground: 20 0.04 255;
+
+    --popover: 100 0 0;
+    --popover-foreground: 20 0.04 255;
+
+    /* Deep forest green */
+    --primary: 38 0.13 155;
+    --primary-foreground: 99 0 0;
+
+    /* Navy blue */
+    --secondary: 25 0.08 255;
+    --secondary-foreground: 95 0 0;
+
+    --muted: 94 0.01 120;
+    --muted-foreground: 50 0.04 255;
+
+    /* Gold/amber accent */
+    --accent: 75 0.14 80;
+    --accent-foreground: 15 0.05 50;
+
+    --destructive: 50 0.2 27;
+    --destructive-foreground: 98 0 0;
+
+    --border: 88 0.02 120;
+    --input: 88 0.02 120;
+    --ring: 38 0.13 155;
+
+    --radius: 0.5rem;
+
+    --chart-1: 38 0.13 155;
+    --chart-2: 25 0.08 255;
+    --chart-3: 75 0.14 80;
+    --chart-4: 55 0.15 160;
+    --chart-5: 65 0.12 45;
+
+    --sidebar: 97 0.005 120;
+    --sidebar-foreground: 20 0.04 255;
+    --sidebar-primary: 38 0.13 155;
+    --sidebar-primary-foreground: 99 0 0;
+    --sidebar-accent: 94 0.01 120;
+    --sidebar-accent-foreground: 20 0.04 255;
+    --sidebar-border: 88 0.02 120;
+    --sidebar-ring: 38 0.13 155;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", "General Sans", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
