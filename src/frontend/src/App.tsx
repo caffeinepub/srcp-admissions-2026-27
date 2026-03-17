@@ -352,7 +352,7 @@ export default function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center pt-16"
+        className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden"
         style={{
           backgroundImage: `url('/assets/generated/hero-campus.dim_1400x600.jpg')`,
           backgroundSize: "cover",
@@ -361,80 +361,109 @@ export default function App() {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-forest-950/90 via-navy-950/80 to-forest-950/70" />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="flex flex-wrap justify-center gap-2 mb-6">
-              {[
-                "AUTONOMOUS",
-                "NAAC Accredited",
-                "PCI Approved",
-                "Affiliated to JNTUA",
-              ].map((badge) => (
-                <span
-                  key={badge}
-                  className="bg-gold-500/20 border border-gold-500/40 text-gold-400 text-xs px-3 py-1 rounded-full font-medium"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
-
-            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-4">
-              Admissions Open
-              <span className="block text-gold-400">2026-27</span>
-            </h1>
-
-            <p className="text-white/80 text-lg md:text-xl mb-2">
-              Santhiram College of Pharmacy, Nandyal
-            </p>
-            <p className="text-white/60 text-sm md:text-base mb-10">
-              NH-40, Nandyala, Andhra Pradesh — Shaping Tomorrow's
-              Pharmaceutical Leaders
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                size="lg"
-                onClick={scrollToApply}
-                data-ocid="hero.primary_button"
-                className="bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-lg px-8 py-6 shadow-pharma-lg"
-              >
-                Apply Online <ChevronRight className="ml-1 w-5 h-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                data-ocid="hero.secondary_button"
-                className="border-white/60 text-white hover:bg-white/10 text-lg px-8 py-6"
-                asChild
-              >
-                <a href="#about">Know More</a>
-              </Button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
-          >
-            {STATS.map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
-              >
-                <p className="font-display text-3xl font-bold text-gold-400">
-                  {stat.value}
-                </p>
-                <p className="text-white/70 text-xs mt-1">{stat.label}</p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center lg:text-left"
+            >
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
+                {[
+                  "AUTONOMOUS",
+                  "NAAC Accredited",
+                  "PCI Approved",
+                  "Affiliated to JNTUA",
+                ].map((badge) => (
+                  <span
+                    key={badge}
+                    className="bg-gold-500/20 border border-gold-500/40 text-gold-400 text-xs px-3 py-1 rounded-full font-medium"
+                  >
+                    {badge}
+                  </span>
+                ))}
               </div>
-            ))}
-          </motion.div>
+
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4">
+                Admissions Open
+                <span className="block text-gold-400">2026-27</span>
+              </h1>
+
+              <p className="text-white/80 text-lg md:text-xl mb-2">
+                Santhiram College of Pharmacy, Nandyal
+              </p>
+              <p className="text-white/60 text-sm md:text-base mb-10">
+                NH-40, Nandyala, Andhra Pradesh — Shaping Tomorrow's
+                Pharmaceutical Leaders
+              </p>
+
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                <Button
+                  size="lg"
+                  onClick={scrollToApply}
+                  data-ocid="hero.primary_button"
+                  className="bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-lg px-8 py-6 shadow-pharma-lg"
+                >
+                  Apply Online <ChevronRight className="ml-1 w-5 h-5" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  data-ocid="hero.secondary_button"
+                  className="border-white/60 text-white hover:bg-white/10 text-lg px-8 py-6"
+                  asChild
+                >
+                  <a href="#about">Know More</a>
+                </Button>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="mt-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3"
+              >
+                {STATS.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
+                  >
+                    <p className="font-display text-2xl font-bold text-gold-400">
+                      {stat.value}
+                    </p>
+                    <p className="text-white/70 text-xs mt-1">{stat.label}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Right: Graduation Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="hidden lg:flex items-center justify-center"
+            >
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gold-500/20 rounded-3xl blur-xl" />
+                <img
+                  src="/assets/uploads/image-1.png"
+                  alt="SRCP Graduation Ceremony"
+                  className="relative rounded-2xl shadow-2xl w-full max-w-lg object-cover border-2 border-gold-500/30"
+                />
+                <div className="absolute -bottom-4 -left-4 bg-forest-800 text-white rounded-xl px-5 py-3 shadow-lg border border-gold-500/30">
+                  <p className="font-display text-lg font-bold text-gold-400">
+                    Convocation 2024
+                  </p>
+                  <p className="text-xs text-white/70">
+                    Celebrating Our Graduates
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
