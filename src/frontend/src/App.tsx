@@ -354,7 +354,7 @@ export default function App() {
         id="home"
         className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden"
         style={{
-          backgroundImage: `url('/assets/generated/hero-campus.dim_1400x600.jpg')`,
+          backgroundImage: `url('/assets/uploads/image-2-1.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -412,7 +412,7 @@ export default function App() {
                   size="lg"
                   variant="outline"
                   data-ocid="hero.secondary_button"
-                  className="border-white/60 text-white hover:bg-white/10 text-lg px-8 py-6"
+                  className="border-white/60 text-black hover:bg-white/10 text-lg px-8 py-6"
                   asChild
                 >
                   <a href="#about">Know More</a>
@@ -449,7 +449,7 @@ export default function App() {
               <div className="relative">
                 <div className="absolute -inset-3 bg-gold-500/20 rounded-3xl blur-xl" />
                 <img
-                  src="/assets/uploads/image-1.png"
+                  src="/assets/uploads/image-2-1.png"
                   alt="SRCP Graduation Ceremony"
                   className="relative rounded-2xl shadow-2xl w-full max-w-lg object-cover border-2 border-gold-500/30"
                 />
